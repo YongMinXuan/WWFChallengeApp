@@ -52,6 +52,13 @@ class Page2 extends Component {
 
     render() {
      
+    if (this.props.location.state){
+            let limit = parseInt(this.props.location.state.pleasant)
+       
+            let components = [];
+            for (var i = 1; i < limit + 1; i++) {
+               
+                let input = 'input' + i
     
         if (this.props.location.state){
             let limit = parseInt(this.props.location.state.pleasant)
