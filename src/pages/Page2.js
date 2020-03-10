@@ -52,7 +52,7 @@ class Page2 extends Component {
 
     render() {
      
-        const { data } = this.props.location.state.pleasant
+    
 
        
         let limit = parseInt(this.props.location.state.pleasant)
