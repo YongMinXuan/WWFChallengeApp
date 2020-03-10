@@ -52,77 +52,99 @@ class Page2 extends Component {
 
     render() {
      
-    
-
+    if (this.props.location.state){
+            let limit = parseInt(this.props.location.state.pleasant)
        
-        let limit = parseInt(this.props.location.state.pleasant)
-       
-        let components = [];
-        for (var i = 1; i < limit + 1; i++) {
-           
-            let input = 'input' + i
-
-            components.push(
-                <div key={i}>
-
-                    <label className="labels" >Part {i}% </label>
-
-                    <input aria-label="inputvalues" align="right" className="inputboxes" min={0} type="number" name={input} onChange={(e) => this.calculatetotal(input, e)} />
-
-                </div>);
-
-
-        }
-
-
-
-
-
-        var sum = 0
-        var count = 0
-       
-        let currentinputvalues = this.state
-        
-        for (var el in currentinputvalues) {
-            
-            count += 1
-
-           
-            if (currentinputvalues.hasOwnProperty(el)) {
-              
-               if (currentinputvalues[el] === "") {
-                count -= 1
-            }
-                sum += parseFloat(currentinputvalues[el]);
+            let components = [];
+            for (var i = 1; i < limit + 1; i++) {
                
+                let input = 'input' + i
+    
+                components.push(
+                    <div key={i}>
+    
+                        <label className="labels" >Part {i}% </label>
+    
+                        <input aria-label="inputvalues" align="right" className="inputboxes" min={0} type="number" name={input} onChange={(e) => this.calculatetotal(input, e)} />
+    
+                    </div>);
+    
+    
             }
-        }
-
-      
-        return (
-            <div className="App">
-                <h1>Page 2</h1>
-                <div className="container">                   
-
-                    <Progressbar location={2} />
+    
+    
+    
+    
+    
+            var sum = 0
+            var count = 0
+           
+            let currentinputvalues = this.state
             
-                    <div className="container2">
-                        {components}
-                       
-                    </div>
-                    <div className="buttongroup">
-
-                     
-                        <Link to='/Page1'><button className="backbutton" >Back </button></Link>
-                       
-                        <Link to='/Page3'><button disabled={sum < 100 || count < limit} className="button" >Next </button></Link>
-                        
-
+            for (var el in currentinputvalues) {
+                
+                count += 1
+    
+               
+                if (currentinputvalues.hasOwnProperty(el)) {
+                  
+                   if (currentinputvalues[el] === "") {
+                    count -= 1
+                }
+                    sum += parseFloat(currentinputvalues[el]);
+                   
+                }
+            }
+    
+          
+            return (
+                <div className="App">
+                    <h1>Page 2</h1>
+                    <div className="container">                   
+    
+                        <Progressbar location={2} />
+                
+                        <div className="container2">
+                            {components}
+                           
+                        </div>
+                        <div className="buttongroup">
+    
+                         
+                            <Link to='/Page1'><button className="backbutton" >Back </button></Link>
+                           
+                            <Link to='/Page3'><button disabled={sum < 100 || count < limit} className="button" >Next </button></Link>
+                            
+    
+                        </div>
                     </div>
                 </div>
-            </div>
-        );
+            );
+        }
+
+        else{
+            return (
+                <div className="App">
+                    <h1>Input not Available</h1>
+                   
+                            
+    
+                     
+                 
+                </div>
+            );
+
+        }
+       
+        
+
+
+      
+        
     }
+
+       
+        
 }
 
 Page2.defaultProps = {
