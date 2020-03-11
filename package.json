@@ -12,7 +12,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "jest",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public -r https://d2b4f5d4f64213b8b238ca85bcdeb49b8b16da7f@github.com/YongMinXuan/WWFChallengeApp"
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public -r https://@github.com/YongMinXuan/WWFChallengeApp"
 
   },
   "jest": {
