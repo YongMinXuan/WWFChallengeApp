@@ -100,7 +100,7 @@ class Page2 extends Component {
           
             return (
                 <div className="App">
-                    <h1>Page 2</h1>
+                  
                     <div className="container">                   
     
                         <Progressbar location={2} />

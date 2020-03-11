@@ -10,7 +10,7 @@ class Progressbar extends Component {
 
     render() {
 
-        console.log('datafrominput:', this.props.location)
+     
         let components = [];
         if (this.props.location == 1) {
             components.push(
